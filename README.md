@@ -5,7 +5,7 @@ It is convenient to use MobaXTerm for accessing Linux drive, it has explorer win
 To use GPU machines via SLURM you need first to submit a ticket to LRZ Helpdesk, to get access:
 https://doku.lrz.de/3-access-and-getting-started-10746642.html
 
-Page for entering LRZ AI page: https://login.ai.lrz.de
+Page for entering LRZ AI page (for interactive jobs and list of queued jobs): https://login.ai.lrz.de
 
 **0.** Go to your home directory:
 type in windows command window (or some terminal window on you system): ssh <user_id2>@login.ai.lrz.de
@@ -51,8 +51,9 @@ for i in range(torch.cuda.device_count()):
 **5a.** Resources allocation (For example, allocation within the lrz-v100x2 partition with single GPU), 
     interactive session (this session time is shorter, than session, allocated with sbatch, so for 
     long computations sbatch is preferred way). This time test.py must say, that CUDA is available, 
-    and list available GPU devices:
+    and list available GPU devices (link to the page with avaialble compute hardware: https://doku.lrz.de/2-compute-10746641.html):
 ````
+$ sinfo
 $ salloc -p lrz-v100x2 --gres=gpu:1
 $ srun --pty bash
 $ conda activate py39
@@ -86,8 +87,7 @@ python3 test.py
 echo "################################"
 ````
 
-
-
 **7.** It is possible to setup Python remote interpreter in PyCharm (or Microsoft VSCode), using host name login.ai.lrz.de and user_id
 
+Short list of SLURM commands: https://doku.lrz.de/5-slurm-1897076524.html 
 To read further about SLURM: https://blog.ronin.cloud/slurm-intro/
