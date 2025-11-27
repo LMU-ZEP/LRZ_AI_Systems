@@ -59,8 +59,7 @@ $ srun --pty bash
 $ conda activate py39
 $ python3 test.py
 ````
-**5b.** Run test script using sbatch command, without prior resource allocation
-    (this will put the job in queue and execute it, output will be in log file "my_test.log"):
+**5b.** Run test script using sbatch command, without prior resource allocation. This will put the job in queue and execute it, output will be in log file "my_test.log", status of the job can be viewed here: https://ood-1.ai.lrz.de/pun/sys/dashboard/activejobs.
 ````
 $ sbatch test_script.sh
 ````
@@ -90,4 +89,5 @@ echo "################################"
 **7.** It is possible to setup Python remote interpreter in PyCharm (or Microsoft VSCode), using host name login.ai.lrz.de and user_id
 
 Short list of SLURM commands: https://doku.lrz.de/5-slurm-1897076524.html 
+
 To read further about SLURM: https://blog.ronin.cloud/slurm-intro/
